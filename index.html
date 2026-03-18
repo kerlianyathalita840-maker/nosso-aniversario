@@ -15,10 +15,6 @@ text-align:center;
 overflow:hidden;
 }
 
-h1{
-margin-top:20px;
-}
-
 img{
 width:300px;
 height:300px;
@@ -56,9 +52,7 @@ animation:cair 5s linear infinite;
 }
 
 @keyframes cair{
-to{
-transform:translateY(110vh);
-}
+to{transform:translateY(110vh);}
 }
 
 </style>
@@ -68,17 +62,15 @@ transform:translateY(110vh);
 
 <h1>Nosso Código ❤️</h1>
 
+<h2 id="frase"></h2>
+
 <a href="pasta-do-xuxu/">
 <button>Clique aqui 💌</button>
 </a>
 
 <div id="contador"></div>
 
-<img id="foto" src="fotos/foto1.png">
-
-<br>
-
-<button onclick="iniciar()">Clique aqui 💌</button>
+<img id="foto" src="pasta-do-xuxu/foto1.png">
 
 <audio id="musica" loop>
 <source src="musica.mp3" type="audio/mpeg">
@@ -86,83 +78,42 @@ transform:translateY(110vh);
 
 <script>
 
-/* tocar musica */
-
 function tocarMusica(){
-
-let musica=document.getElementById("musica");
-
-musica.play();
-
+document.getElementById("musica").play();
 }
 
-
-/* slideshow */
-
 let fotos=[
-"fotos/foto1.png",
-"fotos/foto2.png",
-"fotos/foto3.png"
+"pasta-do-xuxu/foto1.png",
+"pasta-do-xuxu/foto2.png",
+"pasta-do-xuxu/foto3.png"
 ];
 
 let i=0;
 
 setInterval(()=>{
-
 i=(i+1)%fotos.length;
-
 document.getElementById("foto").src=fotos[i];
-
 },3000);
-
-
-/* mensagem */
-
-function iniciar(){
-
-document.getElementById("frase").innerText="Eu te amo muito ❤️";
-
-}
-
-
-/* contador */
 
 let inicio=new Date("2025-03-22");
 
 setInterval(()=>{
-
 let agora=new Date();
-
 let diff=agora-inicio;
-
 let dias=Math.floor(diff/(1000*60*60*24));
-
 document.getElementById("contador").innerText=
 "Juntos há "+dias+" dias ❤️";
-
 },1000);
 
-
-/* corações */
-
 function criarCoracao(){
-
 let heart=document.createElement("div");
-
 heart.classList.add("heart");
-
 heart.innerHTML="❤️";
-
 heart.style.left=Math.random()*100+"vw";
-
 heart.style.fontSize=(10+Math.random()*20)+"px";
-
 document.body.appendChild(heart);
 
-setTimeout(()=>{
-heart.remove();
-},5000);
-
+setTimeout(()=>{heart.remove();},5000);
 }
 
 setInterval(criarCoracao,300);
