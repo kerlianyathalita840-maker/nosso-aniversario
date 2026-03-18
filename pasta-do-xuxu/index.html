@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Pasta do Xuxu ❤️</title>
 
+<style>
+
+body{
+background:#0f172a;
+color:white;
+font-family:Arial;
+text-align:center;
+margin:0;
+}
+
+h1{
+margin:20px;
+}
+
+.galeria{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+padding:20px;
+}
+
+.galeria img{
+width:100%;
+border-radius:12px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.galeria img:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px pink;
+}
+
+#modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+align-items:center;
+justify-content:center;
+}
+
+#modal img{
+max-width:80%;
+max-height:80%;
+border-radius:10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Pasta do Xuxu ❤️</h1>
+
+<div class="galeria">
+
+<img src="foto1.png" onclick="abrir(this)">
+<img src="foto2.png" onclick="abrir(this)">
+<img src="foto3.png" onclick="abrir(this)">
+<img src="foto4.png" onclick="abrir(this)">
+
+</div>
+
+<div id="modal" onclick="fechar()">
+<img id="imagemGrande">
+</div>
+
+<script>
+
+function abrir(img){
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("imagemGrande").src=img.src;
+
+}
+
+function fechar(){
+
+document.getElementById("modal").style.display="none";
+
+}
+
+</script>
+
+</body>
+</html>
