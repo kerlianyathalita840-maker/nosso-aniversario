@@ -28,7 +28,7 @@ margin-top:20px;
 }
 
 button{
-margin-top:20px;
+margin-top:40px; /* espaço maior */
 padding:12px 25px;
 border:none;
 border-radius:10px;
@@ -64,25 +64,21 @@ transform:translateY(110vh);
 </style>
 </head>
 
-<body onclick="tocarMusica()">
+<body>
 
 <h1> Eu Te Amo ❤️</h1>
 
 <h2>22/03/2025</h2>
 
-<a href="pasta-do-xuxu/">
-
 <img id="foto" src="pasta-do-xuxu/foto1.png">
 
 <br>
 
-<button>Clique aqui 💌</button>
-
-</a>
+<button onclick="tocarMusica()">▶️ Tocar música 💌</button>
 
 <div id="contador"></div>
 
-<audio controls>
+<audio id="musica">
   <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
@@ -97,15 +93,15 @@ let fotos=[
 "pasta-do-xuxu/foto2.png",
 "pasta-do-xuxu/foto3.png",
 "pasta-do-xuxu/foto4.png",
-  "pasta-do-xuxu/foto5.png",
-  "pasta-do-xuxu/foto6.png",
-  "pasta-do-xuxu/foto7.png",
-  "pasta-do-xuxu/foto8.png",
-  "pasta-do-xuxu/foto9.png",
-  "pasta-do-xuxu/foto10.png",
-  "pasta-do-xuxu/foto11.png",
-   "pasta-do-xuxu/foto12.png",
-   "pasta-do-xuxu/foto13.png"  
+"pasta-do-xuxu/foto5.png",
+"pasta-do-xuxu/foto6.png",
+"pasta-do-xuxu/foto7.png",
+"pasta-do-xuxu/foto8.png",
+"pasta-do-xuxu/foto9.png",
+"pasta-do-xuxu/foto10.png",
+"pasta-do-xuxu/foto11.png",
+"pasta-do-xuxu/foto12.png",
+"pasta-do-xuxu/foto13.png"  
 ];
 
 let i=0;
