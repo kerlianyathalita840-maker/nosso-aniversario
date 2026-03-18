@@ -67,37 +67,29 @@ transform:translateY(110vh);
 </style>
 </head>
 
-<body onclick="tocarMusica()">
+<body>
 
 <h1> Eu Te Amo ❤️</h1>
 <h2>22/03/2025</h2>
 
 <img id="foto" src="pasta-do-xuxu/foto1.png">
 
-<!-- BOTÃO DA MÚSICA -->
-<button onclick="tocarMusica()">🎵 Tocar Música</button>
+<button id="btnMusica">🎵 Tocar Música</button>
 
-<!-- BOTÃO DA PASTA -->
 <button onclick="abrirPasta()">📂 Ver nossas fotos</button>
 
 <div id="contador"></div>
 
-<audio id="musica" preload="auto">
-  <source src="audio.mp3" type="audio/mpeg">
-</audio>
+<audio id="musica" src="audio.mp3"></audio>
 
 <script>
 
-function tocarMusica(){
-let musica = document.getElementById("musica");
+const botao = document.getElementById("btnMusica");
+const musica = document.getElementById("musica");
 
-musica.load();
-musica.currentTime = 0;
-
-musica.play().catch(()=>{
-alert("Clique novamente para ativar o som 🎵");
+botao.addEventListener("click", () => {
+    musica.play();
 });
-}
 
 function abrirPasta(){
 window.location.href = "pasta-do-xuxu/";
