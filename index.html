@@ -25,6 +25,7 @@ height:300px;
 object-fit:cover;
 border-radius:15px;
 margin-top:20px;
+cursor:pointer;
 }
 
 button{
@@ -70,7 +71,9 @@ transform:translateY(110vh);
 
 <h2>22/03/2025</h2>
 
+<a href="pasta-do-xuxu/">
 <img id="foto" src="pasta-do-xuxu/foto1.png">
+</a>
 
 <br>
 
@@ -78,7 +81,7 @@ transform:translateY(110vh);
 
 <div id="contador"></div>
 
-<audio id="musica" controls>
+<audio id="musica">
   <source src="./musica.mp3" type="audio/mpeg">
 </audio>
 
@@ -87,10 +90,8 @@ transform:translateY(110vh);
 function tocarMusica(){
 let musica = document.getElementById("musica");
 
-musica.play().then(()=>{
-console.log("tocando");
-}).catch((erro)=>{
-alert("Clique novamente para tocar a música 🎵");
+musica.play().catch(()=>{
+alert("Clique novamente para tocar 🎵");
 });
 }
 
@@ -113,38 +114,26 @@ let fotos=[
 let i=0;
 
 setInterval(()=>{
-
 i=(i+1)%fotos.length;
-
 document.getElementById("foto").src=fotos[i];
-
 },3000);
 
 let inicio=new Date("2025-03-22");
 
 setInterval(()=>{
-
 let agora=new Date();
-
 let diff=agora-inicio;
-
 let dias=Math.floor(diff/(1000*60*60*24));
 
 document.getElementById("contador").innerText=
 "Juntos há "+dias+" dias ❤️";
-
 },1000);
 
 function criarCoracao(){
-
 let heart=document.createElement("div");
-
 heart.classList.add("heart");
-
 heart.innerHTML="❤️";
-
 heart.style.left=Math.random()*100+"vw";
-
 heart.style.fontSize=(10+Math.random()*20)+"px";
 
 document.body.appendChild(heart);
@@ -152,7 +141,6 @@ document.body.appendChild(heart);
 setTimeout(()=>{
 heart.remove();
 },5000);
-
 }
 
 setInterval(criarCoracao,300);
