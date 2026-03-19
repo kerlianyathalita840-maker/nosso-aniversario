@@ -71,8 +71,9 @@ cursor:pointer;
 
 <button onclick="voltar()">⬅ Voltar</button>
 
-<audio id="musica" loop>
-<source src="../audio.mp3" type="audio/mpeg">
+<!-- 🔥 ÁUDIO CORRIGIDO -->
+<audio id="musica" controls loop>
+  <source src="../audio.mp3" type="audio/mpeg">
 </audio>
 
 <div class="galeria">
@@ -99,27 +100,27 @@ cursor:pointer;
 
 <script>
 
-const musica=document.getElementById("musica");
+const musica = document.getElementById("musica");
 
 function iniciarMusica(){
 
-let tempo=localStorage.getItem("musicaTempo");
+let tempo = localStorage.getItem("musicaTempo");
 
 if(tempo){
-musica.currentTime=tempo;
+musica.currentTime = tempo;
 }
 
 musica.play().catch(()=>{});
 
-document.removeEventListener("click",iniciarMusica);
+document.removeEventListener("click", iniciarMusica);
 
 }
 
-document.addEventListener("click",iniciarMusica);
+document.addEventListener("click", iniciarMusica);
 
 function voltar(){
 
-localStorage.setItem("musicaTempo",musica.currentTime);
+localStorage.setItem("musicaTempo", musica.currentTime);
 
 window.location.href="../index.html";
 
@@ -128,7 +129,6 @@ window.location.href="../index.html";
 function abrir(img){
 
 document.getElementById("modal").style.display="flex";
-
 document.getElementById("imagemGrande").src=img.src;
 
 }
