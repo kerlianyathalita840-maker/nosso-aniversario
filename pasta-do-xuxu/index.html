@@ -71,7 +71,7 @@ cursor:pointer;
 
 <button onclick="voltar()">⬅ Voltar</button>
 
-<audio id="musica" autoplay muted loop>
+<audio id="musica" loop>
 <source src="../audio.mp3" type="audio/mpeg">
 </audio>
 
@@ -101,7 +101,7 @@ cursor:pointer;
 
 const musica=document.getElementById("musica");
 
-window.addEventListener("load",()=>{
+function iniciarMusica(){
 
 let tempo=localStorage.getItem("musicaTempo");
 
@@ -109,13 +109,13 @@ if(tempo){
 musica.currentTime=tempo;
 }
 
-musica.play();
+musica.play().catch(()=>{});
 
-setTimeout(()=>{
-musica.muted=false;
-},1000);
+document.removeEventListener("click",iniciarMusica);
 
-});
+}
+
+document.addEventListener("click",iniciarMusica);
 
 function voltar(){
 
