@@ -8,7 +8,7 @@
 
 body{
 margin:0;
-background:#ff4d88;
+background: linear-gradient(135deg,#7c3aed,#ff4d88);
 color:white;
 font-family:Arial;
 text-align:center;
@@ -121,10 +121,8 @@ let fotos=[
 let i=0;
 
 setInterval(()=>{
-
 i=(i+1)%fotos.length;
 document.getElementById("foto").src=fotos[i];
-
 },3000);
 
 let inicio=new Date("2025-03-22");
@@ -144,13 +142,16 @@ document.getElementById("contador").innerText=
 function criarCoracao(){
 
 let heart=document.createElement("div");
+
 heart.classList.add("heart");
 
 heart.innerHTML="❤️";
 
 heart.style.left=Math.random()*100+"vw";
 
-heart.style.fontSize=(10+Math.random()*20)+"px";
+heart.style.fontSize=(10+Math.random()*30)+"px";
+
+heart.style.animationDuration=(3+Math.random()*3)+"s";
 
 document.body.appendChild(heart);
 
@@ -158,11 +159,11 @@ setTimeout(()=>{
 
 heart.remove();
 
-},5000);
+},6000);
 
 }
 
-setInterval(criarCoracao,10);
+setInterval(criarCoracao,120);
 
 </script>
 
